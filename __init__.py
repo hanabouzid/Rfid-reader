@@ -6,7 +6,6 @@ import RPi.GPIO as GPIO
 from mfrc522 import SimpleMFRC522
 reader = SimpleMFRC522()
 
-
 class RfidReader(MycroftSkill):
     def __init__(self):
         super(RfidReader, self).__init__(name="RfidReader")
@@ -16,8 +15,6 @@ class RfidReader(MycroftSkill):
         try:
             id, t = reader.read()
             self.speak_dialog("login", data={"name": t, "id": id})
-           
-
         finally:
             GPIO.cleanup()
 
