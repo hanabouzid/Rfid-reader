@@ -9,9 +9,9 @@ reader = SimpleMFRC522()
 
 class RfidReader(MycroftSkill):
     def __init__(self):
-        MycroftSkill.__init__(self)
+        super(RfidReader, self).__init__(name="RfidReader")
 
-    @intent_handler(IntentBuilder("").require("querry"))
+    @intent_handler(IntentBuilder("").require("login"))
     def handle_login(self):
         try:
             id, t = reader.read()
