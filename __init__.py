@@ -16,7 +16,7 @@ class RfidReader(MycroftSkill):
         try:
             id, t = reader.read()
             self.speak_dialog("login", data={"name": t, "id": id})
-            self.speak_dialog("precaution")
+           
 
         finally:
             GPIO.cleanup()
